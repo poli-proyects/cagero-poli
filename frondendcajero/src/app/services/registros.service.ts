@@ -22,12 +22,12 @@ export class RegistrosService {
 
   
   retirarDinero(documento: any,valorRetiro : any){
-    return this.http.post(this.urlPer+'/'+documento,valorRetiro)
+    return this.http.post(this.home+'/'+documento,valorRetiro)
     }
 
     
     consignarDiner(documento: any,valorRetiro : any){
-      let retiro =  `${this.urlPer}/consignar`
+      let retiro =  `${this.home}/consignar`
       
       return this.http.post(retiro+'/'+documento,valorRetiro)
 

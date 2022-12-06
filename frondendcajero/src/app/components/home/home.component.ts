@@ -28,7 +28,7 @@ getPerson(){
 this.registroServ.getUser().subscribe(
   data=>{
     this.listUser = data
-    console.log(data)
+    
   },(error)=>{
           
       swal.fire({

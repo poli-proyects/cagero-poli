@@ -14,3 +14,12 @@ export class movimiento{
 
         }
 }
+
+
+export class retiro{
+    valorRetiro :number 
+    constructor(valorRetiro : number){
+        this.valorRetiro = valorRetiro
+    }
+
+}

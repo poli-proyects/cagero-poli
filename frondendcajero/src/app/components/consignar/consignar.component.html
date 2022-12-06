@@ -1,1 +1,11 @@
-<p>consignar works!</p>
+<div class="container">
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <form [formGroup]="movForm"   (submit)="consignarDinero()">
+            <input type="number" formControlName = "valorRetiro">
+            <button class="btn btn-dark btn-sm"> Enviar</button>
+        </form>
+    </div>
+  </div>
+</div>

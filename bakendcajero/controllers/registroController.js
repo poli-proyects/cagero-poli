@@ -55,9 +55,15 @@ const retiroDinero = async(req,res)=>{
                 }else{
                     res.json('retiro realizado de forma correcta')
                     const date = new Date();
-                   
+                 
+                 
+                    let dia = date.toString().substring(7,10)
+                    let mes = date.toString().substring(4,7)
+                    let anio = date.toString().substring(11,16)
+              
+                    let fecha = `${dia}/${mes}/${anio}`
 
-                    const insertMov = ` INSERT INTO movieentos (saldo,fecha,documento,tipoMov) VALUES  (${valorRetiro},'${date.getTime()}','${documento}','retiro')`;
+                    const insertMov = ` INSERT INTO movieentos (saldo,fecha,documento,tipoMov) VALUES  (${valorRetiro},'${fecha}','${documento}','retiro')`;
                     db.query(insertMov,(error,results)=>{
                         if(error){
                             throw error

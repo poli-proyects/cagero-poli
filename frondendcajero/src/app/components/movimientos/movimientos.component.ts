@@ -11,10 +11,12 @@ import {movimiento}from 'src/app/models/movimiento'
 export class MovimientosComponent implements OnInit {
   listMov :movimiento[]= []
   documento : String |null;
+  
 
   constructor(
     private aRouter  : ActivatedRoute,  
-    private serv : RegistrosService
+    private serv : RegistrosService,
+    private  router: Router,
   ) {
 
     this.documento = this.aRouter.snapshot.paramMap.get('documento');
@@ -38,5 +40,10 @@ export class MovimientosComponent implements OnInit {
       })
     }
     )
+  }
+
+  closesecion(){
+    localStorage.removeItem('token')
+    this.router.navigate(['login'])
   }
 }

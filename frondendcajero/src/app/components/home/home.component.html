@@ -1,6 +1,17 @@
+<div >
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand">CAJERO AUTMÁTICO POLI </a>
+
+
+  <button  class="btn btn-danger" (click)= 'closesecion()'> cerrar sesion</button>
+</nav>
+</div>
+
+<br>
+<div  class = "container">
 <table class="table table-dark table-hover center"  style="height: 100px;">
     <thead>
-        <button  class="btn btn-danger" (click)= 'closesecion()'> cerrar sesion</button>
+
       <tr> 
         <th scope="col">NOMBRE</th>
         <th scope="col">DOCUMENTO </th>
@@ -16,16 +27,16 @@
         <td scope="row">{{user.saldo}}$</td>    
         <td>
           <div class="options">
-            <i class="btn btn-light" [routerLink]="['/movmientos/',(user.documento)]">NUEVO</i>
+          
             <br>
             <br>
              <i [routerLink]="['/movmientos/',(user.documento)]" class="btn btn-light">HISTORIAL MOVIMIENTOS</i>
             <br>
             <br>
-             <i  [routerLink]="['/movmientos/',(user.documento)]" class="btn btn-light">RETIRAR</i>
+             <i  [routerLink]="['/retiro/',(user.documento)]" class="btn btn-light">RETIRAR</i>
              <br>
              <br>
-             <i  [routerLink]="['/movmientos/',(user.documento)]" class="btn btn-light">CONSIGNAR</i>
+             <i  [routerLink]="['/consginar/',(user.documento)]" class="btn btn-light">CONSIGNAR</i>
           </div>
          
         </td>
@@ -36,3 +47,5 @@
       
 
   </table>
+
+</div>
