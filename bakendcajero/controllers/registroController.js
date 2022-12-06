@@ -2,6 +2,17 @@ const {encript} = require('../middelwares/encriptPass');
 
 const db = require('../db/config');
 
+const getUser = async(req,res)=>{
+ const sql = 'SELECT id, nombres,documento,correo,saldo from usuarios'
+ db.query(sql,(error,results)=>{
+    if(error){
+        res.json(error);
+    }else{
+        res.json(results);
+    }
+})
+
+}
 const inserUser= async(req,res)=>{
     let {nombres,correo,contraseña,documento} =  await req.body;
     contraseña =  String(contraseña);
@@ -51,7 +62,7 @@ const retiroDinero = async(req,res)=>{
                         if(error){
                             throw error
                         }else{
-                           console.log('registro de transaccion agregado')
+                           console.log('registro de reitiro  agregado')
                         }
                     })
                 }
@@ -101,7 +112,7 @@ const consignarDinero = async(req,res)=>{
                         if(error){
                             throw error
                         }else{
-                           console.log('registro de transaccion agregado')
+                           console.log('registro de consignacion agregado')
                         }
                     })
                 }
@@ -118,5 +129,6 @@ const consignarDinero = async(req,res)=>{
 module.exports = {
     inserUser,
     retiroDinero,
-    consignarDinero
+    consignarDinero,
+    getUser
 }

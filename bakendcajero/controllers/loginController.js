@@ -13,7 +13,7 @@ const auth = async(req,res)=>{
     }else{
         db.query(sql,(error,results)=>{
                 if(error){
-                    res.json({error : errror});
+                    res.json({error : error});
                 }else{
                     results.forEach(element => {
                         pass = element.contraseña;
