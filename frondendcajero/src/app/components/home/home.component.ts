@@ -41,7 +41,7 @@ this.registroServ.getUser().subscribe(
   }
   closesecion(){
     localStorage.removeItem('token')
-    this.router.navigate(['inicio'])
+    this.router.navigate(['login'])
   }
   }
 

@@ -6,13 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
-import { ConsignacionComponent } from './components/consignacion/consignacion.component';
 import { RetiroComponent } from './components/retiro/retiro.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MovimientosComponent } from './components/movimientos/movimientos.component';
+import { ConsignarComponent } from './components/consignar/consignar.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +20,10 @@ import { MovimientosComponent } from './components/movimientos/movimientos.compo
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    ConsignacionComponent,
     RetiroComponent,
-    MovimientosComponent
+    MovimientosComponent,
+    ConsignarComponent,
+    
   ],
   imports: [
     BrowserModule,

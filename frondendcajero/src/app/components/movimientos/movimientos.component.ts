@@ -16,6 +16,7 @@ export class MovimientosComponent implements OnInit {
     private aRouter  : ActivatedRoute,  
     private serv : RegistrosService
   ) {
+
     this.documento = this.aRouter.snapshot.paramMap.get('documento');
    }
 
@@ -24,6 +25,7 @@ export class MovimientosComponent implements OnInit {
   }
 
   getmovBYdoc(){
+
     this.serv.movimientos(this.documento).subscribe(
     data=>{
       this.listMov = data
@@ -31,7 +33,7 @@ export class MovimientosComponent implements OnInit {
     },error=>{
       swal.fire({
         icon: 'error',
-        title: 'los campos son obligatorios',
+        title: 'error de conexion ',
       
       })
     }

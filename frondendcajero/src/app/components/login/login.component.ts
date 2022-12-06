@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
 
 
       }
+      
       this.lognService.login(credenciales).subscribe(
         (data: any)=>{
           
