@@ -3,7 +3,7 @@ const db = require('../db/config');
 const getMovi= async(req,res)=>{
     const {documento}  = await req.params; 
 
-    const sql = `SELECT * FROM movieentos  WHERE documento = '${documento}'`;
+    const sql = `SELECT * FROM movieentos  WHERE documento = '${documento}'  ORDER BY id DESC`;
   
     db.query(sql,(error,results)=>{
         if(error){

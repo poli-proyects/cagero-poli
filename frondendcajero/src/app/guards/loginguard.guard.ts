@@ -20,7 +20,7 @@ export class LoginguardGuard implements CanActivate {
         icon: 'error',
         title: 'debes iniciar secion primero',
     })
-    this.router.navigate(['login'])
+    this.router.navigate(['/'])
       return false
     }
     return true;

@@ -9,7 +9,7 @@ import { RetiroComponent } from './components/retiro/retiro.component';
 import { ConsignarComponent } from './components/consignar/consignar.component';
 
 const routes: Routes = [
- { path: 'login', component: LoginComponent },
+ { path: '', component: LoginComponent },
   {path :'home',component: HomeComponent,canActivate: [LoginguardGuard]},
   {path :'movmientos/:documento',component:MovimientosComponent,canActivate: [LoginguardGuard]},
   {path :'consginar/:documento',component:ConsignarComponent,canActivate: [LoginguardGuard]},

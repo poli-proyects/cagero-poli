@@ -27,6 +27,7 @@ documento : String | null
   }
 
   ngOnInit(): void {
+    
   }
 
   consignarDinero(){

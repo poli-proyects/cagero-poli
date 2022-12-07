@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPerson();
+    this.inactividad();
   }
 
 
@@ -41,7 +42,20 @@ this.registroServ.getUser().subscribe(
   }
   closesecion(){
     localStorage.removeItem('token')
-    this.router.navigate(['login'])
+    this.router.navigate([''])
+  }
+  inactividad(){
+    setTimeout(()=>{ 
+      swal.fire({
+        icon: 'error',
+        title: 'tú sesion se cerro por inactividad  ',
+      
+      })                          
+      localStorage.removeItem('token')
+      this.router.navigate([''])
+  
+  }, 180000);
+  
   }
   }
 
