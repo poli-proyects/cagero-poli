@@ -1,51 +1,54 @@
-<div >
-  <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand">CAJERO AUTMÁTICO POLI </a>
+<body>
+
+  <div>
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" routerLink="/home">CAJERO AUTMÁTICO POLI </a>
 
 
-  <button  class="btn btn-danger" (click)= 'closesecion()'> cerrar sesion</button>
-</nav>
-</div>
+      <button class="btn btn-danger sesion" (click)='closesecion()'> cerrar sesion</button>
+    </nav>
+  </div>
 
-<br>
-<div  class = "container">
-<table class="table table-dark table-hover center"  style="height: 100px;">
-    <thead>
+  <br>
+  <div class="container">
+    <table class="table table-primary table-bordered table-hover center" style="height: 100px;">
+      <thead>
 
-      <tr> 
-        <th scope="col">NOMBRE</th>
-        <th scope="col">DOCUMENTO </th>
-        <th scope="col"> CORREO</th>
-        <th>SALDO ACTUAL</th>
-        <th scope="col"> ACCION</th>
-    </thead>
-    <tbody >
-      <tr *ngFor="let user of listUser">
-       <td scope="col">{{user.nombres}}</td>
-        <td scope="row">{{user.documento}}</td>
-        <td scope="row">{{user.correo}}</td>
-        <td scope="row">{{user.saldo}}$</td>    
-        <td>
-          <div class="options">
-          
-            <br>
-            <br>
-             <i [routerLink]="['/movmientos/',(user.documento)]" class="btn btn-light">HISTORIAL MOVIMIENTOS</i>
-            <br>
-            <br>
-             <i  [routerLink]="['/retiro/',(user.documento)]" class="btn btn-light">RETIRAR</i>
-             <br>
-             <br>
-             <i  [routerLink]="['/consginar/',(user.documento)]" class="btn btn-light">CONSIGNAR</i>
-          </div>
-         
-        </td>
+        <tr>
+          <th scope="col">NOMBRE</th>
+          <th scope="col">DOCUMENTO </th>
+          <th scope="col"> CORREO</th>
+          <th>SALDO ACTUAL</th>
+          <th scope="col"> ACCION</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of listUser">
+          <td scope="col">{{user.nombres}}</td>
+          <td scope="row">{{user.documento}}</td>
+          <td scope="row">{{user.correo}}</td>
+          <td scope="row">{{user.saldo}}$</td>
+          <td>
+            <div class="options">
 
-      </tr>
+              <br>
+              <br>
+              <i [routerLink]="['/movmientos/',(user.documento)]" class="btn btn-danger">HISTORIAL MOVIMIENTOS</i>
+              <br>
+              <br>
+              <i [routerLink]="['/retiro/',(user.documento)]" class="btn btn-dark">RETIRAR</i>
+              <br>
+              <br>
+              <i [routerLink]="['/consginar/',(user.documento)]" class="btn btn-warning">CONSIGNAR</i>
+            </div>
 
-    </tbody>
-      
+          </td>
 
-  </table>
+        </tr>
 
-</div>
+      </tbody>
+
+
+    </table>
+
+  </div>
+</body>
