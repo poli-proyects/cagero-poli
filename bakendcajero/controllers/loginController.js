@@ -7,7 +7,7 @@ const auth = async(req,res)=>{
     let {correo,contraseña} = await req.body;
     contraseña = String(contraseña);
     let pass ;
-    const sql = ` SELECT contraseña FROM usuarios WHERE correo = '${correo}'`;
+    const sql = ` SELECT contraseña ,correo , tipoUser FROM usuarios WHERE correo = '${correo}'`;
     if(correo == undefined){
         res.json('ingresa los campos ');
     }else{
@@ -15,6 +15,7 @@ const auth = async(req,res)=>{
                 if(error){
                     res.json({error : error});
                 }else{
+                  
                     results.forEach(element => {
                         pass = element.contraseña;
                     });
