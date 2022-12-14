@@ -2,7 +2,7 @@
 - instala las dependendencias con npm i 
 -corre la app con ng serve --o
 
-#backend 
+# backend 
 -instala todas las dependencias con npm i
 -corre la la api con node index 
 -monta la base de datos en un motor , el script se encuentra en la carpeta backend llamado cajeropoli.sql
