@@ -19,7 +19,7 @@ export class ConsultorComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPerson();
-    this.inactividad();
+  
   }
   getPerson(){
     this.registroServ.getUser().subscribe(

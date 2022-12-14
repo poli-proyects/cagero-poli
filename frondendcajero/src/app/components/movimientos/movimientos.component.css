@@ -1,13 +1,6 @@
-body {
-    height: 100%;
-    background: rgb(2,0,36);
-    background: linear-gradient(158deg, rgb(107, 207, 214) 25%, rgb(159, 179, 190) 50%, rgba(0,212,255,1) 75%);
-}
+
 
 .navbar-brand{
     margin-left: 20px;
 }
 
-.btn-danger{
-    margin-right: 10px;
-}

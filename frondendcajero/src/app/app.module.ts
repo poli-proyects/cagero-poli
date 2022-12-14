@@ -14,6 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MovimientosComponent } from './components/movimientos/movimientos.component';
 import { ConsignarComponent } from './components/consignar/consignar.component';
 import { ConsultorComponent } from './components/consultor/consultor.component';
+import { CreateUserComponent } from './components/create-user/create-user.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ConsultorComponent } from './components/consultor/consultor.component';
     MovimientosComponent,
     ConsignarComponent,
     ConsultorComponent,
+    CreateUserComponent,
     
   ],
   imports: [

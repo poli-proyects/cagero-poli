@@ -13,3 +13,25 @@
 
     }
 }
+
+export class user{
+
+
+  nombres : String
+ documento : String
+ correo : String
+ contraseña : String
+tipoUser : String
+
+ constructor(nombres : String,documento :String, correo : String,contraseña: String,tipoUser : String){
+  
+     this.nombres = nombres
+     this.documento = documento
+     this.correo = correo
+     this.contraseña = contraseña
+     this.tipoUser = tipoUser
+   
+
+ }
+
+}

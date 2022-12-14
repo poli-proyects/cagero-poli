@@ -14,10 +14,10 @@ const getUser = async(req,res)=>{
 
 }
 const inserUser= async(req,res)=>{
-    let {nombres,correo,contraseña,documento} =  await req.body;
+    let {nombres,correo,contraseña,documento,tipoUser} =  await req.body;
     contraseña =  String(contraseña);
     const hash = await encript(contraseña);
-    const sql = ` INSERT INTO usuarios (nombres,correo,contraseña,documento,saldo) VALUES ('${nombres}','${correo}','${hash}','${documento}',${0})`;
+    const sql = ` INSERT INTO usuarios (nombres,correo,contraseña,documento,tipoUser,saldo) VALUES ('${nombres}','${correo}','${hash}','${documento}','${tipoUser}',${0})`;
     db.query(sql,(error,results)=>{
         if(error){
             res.json(error);

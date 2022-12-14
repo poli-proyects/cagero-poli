@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-12-2022 a las 03:21:48
+-- Tiempo de generación: 14-12-2022 a las 23:14:52
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.0.23
 
@@ -53,7 +53,26 @@ INSERT INTO `movieentos` (`id`, `saldo`, `fecha`, `documento`, `tipoMov`) VALUES
 (11, 2000, 'Sun Dec 04', '1000698949', 'consignacion'),
 (12, 2000, '\" 04/Dec/2', '1000698949', 'consignacion'),
 (13, 2000, '\" 04/Dec/2022 ', '1000698949', 'consignacion'),
-(14, 2000, ' 04/Dec/2022 ', '1000698949', 'consignacion');
+(14, 2000, ' 04/Dec/2022 ', '1000698949', 'consignacion'),
+(15, 200, ' 05/Dec/2022 ', '1000698949', 'consignacion'),
+(16, 1, ' 05/Dec/2022 ', '1000698949', 'consignacion'),
+(17, 100, ' 05/Dec/2022 ', '1000698949', 'consignacion'),
+(18, 100, ' 05/Dec/2022 ', '1000698949', 'consignacion'),
+(19, 100, ' 05/Dec/2022 ', '1000698947', 'consignacion'),
+(20, 100, ' 06/Dec/2022 ', '1000698947', 'consignacion'),
+(21, 200, ' 06/Dec/2022 ', '1000698949', 'consignacion'),
+(22, 52222, ' 06/Dec/2022 ', '1000698947', 'consignacion'),
+(23, 2000, ' 06/Dec/2022 ', '1000698949', 'consignacion'),
+(24, 20000, '1670364700589', '1000698949', 'retiro'),
+(25, 15156, ' 06/Dec/2022 ', '1000698947', 'retiro'),
+(26, 10000, ' 06/Dec/2022 ', '1000698947', 'consignacion'),
+(27, 10000, ' 06/Dec/2022 ', '1000698947', 'retiro'),
+(28, 2000, ' 06/Dec/2022 ', '1000698949', 'retiro'),
+(29, 20000, ' 06/Dec/2022 ', '1000698949', 'consignacion'),
+(30, 37266, ' 06/Dec/2022 ', '1000698947', 'retiro'),
+(31, 200, ' 06/Dec/2022 ', '1000698947', 'consignacion'),
+(32, 2000, ' 08/Dec/2022 ', '1000698949', 'consignacion'),
+(33, 2000, ' 14/Dec/2022 ', '1234567892', 'consignacion');
 
 -- --------------------------------------------------------
 
@@ -67,15 +86,20 @@ CREATE TABLE `usuarios` (
   `correo` varchar(200) NOT NULL,
   `contraseña` varchar(2000) NOT NULL,
   `documento` varchar(20) NOT NULL,
-  `saldo` int(11) NOT NULL
+  `saldo` int(11) NOT NULL,
+  `tipoUser` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombres`, `correo`, `contraseña`, `documento`, `saldo`) VALUES
-(7, 'eduardo', 'eduardoo@gmail.com', '$2a$08$7RIxjULGSyk4JIFRV.ZqTuMJuEuboy1OU/oZ5egoL6Whu7QRF1zBa', '1000698949', 24000);
+INSERT INTO `usuarios` (`id`, `nombres`, `correo`, `contraseña`, `documento`, `saldo`, `tipoUser`) VALUES
+(7, 'eduardo', 'eduardoo@gmail.com', '$2a$08$7RIxjULGSyk4JIFRV.ZqTuMJuEuboy1OU/oZ5egoL6Whu7QRF1zBa', '1000698949', 26601, 'user'),
+(8, 'admin', 'admin@gmail.com', '$2a$08$ZX3NLxAdmJs95x2qyP7mDevx73J4ec9GhUaqu.Pbp6E7aLzUMPVmi', '1000698947', 200, 'admin'),
+(9, 'user', 'user@gmail.com', '$2a$08$P8xWmB18z.IuGcI0bDfPzeem1GrPE6OGGuAzyouYSnBNDE7.5epp2', '1000698945', 0, 'user'),
+(10, 'santiago', 'santiago@gmail.com', '$2a$08$rFAv1uyRXGBCM9oVl0lBWO/ZfOTRNSf.2wMcB5MoY8LsCymoP2Aa2', '12345678910', 0, ''),
+(11, 'prueba', 'prueba@gmail.com', '$2a$08$Cq79maprtYIzUh1QG4eOqORtEtq4YMaIYm43QubHp2fBYPkFltAEO', '1234567892', 2000, 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -101,13 +125,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `movieentos`
 --
 ALTER TABLE `movieentos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { user } from '../models/usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,10 @@ export class RegistrosService {
 
   getUser():Observable<any>{
     return this.http.get(this.home);
+
+  }
+  insertUser(user : user):Observable<any>{
+  return this.http.post(this.urlPer,user);
 
   }
   movimientos(documento : any):Observable<any>{

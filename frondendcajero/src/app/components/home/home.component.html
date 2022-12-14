@@ -1,15 +1,31 @@
 <body>
 
-  <div>
-    <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" routerLink="/home">CAJERO AUTMÁTICO POLI </a>
+ 
 
-
-      <button class="btn btn-danger sesion" (click)='closesecion()'> cerrar sesion</button>
-    </nav>
-  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="/home">CAJERO AUTMÁTICO POLI </a>
+ 
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="navbar-brand" routerLink="/insertUser">crear usuario </a>
+        </li>
+      
+      
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+       
+        <button class="btn btn-danger sesion" (click)='closesecion()'> cerrar sesion</button>
+      </form>
+    </div>
+  </nav>
 
   <br>
+
+  <div class="container">
+    <h1>PANEL ADMINSTRATIVO</h1>
+  </div>
   <div class="container">
     <table class="table table-primary table-bordered table-hover center" style="height: 100px;">
       <thead>
