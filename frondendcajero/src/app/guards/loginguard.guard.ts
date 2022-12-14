@@ -18,7 +18,7 @@ export class LoginguardGuard implements CanActivate {
     if(!this.authService.isPermis()){
       swal.fire({
         icon: 'error',
-        title: 'debes iniciar secion primero',
+        title: 'debes iniciar sesion primero',
     })
     this.router.navigate(['/'])
       return false

@@ -13,6 +13,7 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MovimientosComponent } from './components/movimientos/movimientos.component';
 import { ConsignarComponent } from './components/consignar/consignar.component';
+import { ConsultorComponent } from './components/consultor/consultor.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ConsignarComponent } from './components/consignar/consignar.component';
     RetiroComponent,
     MovimientosComponent,
     ConsignarComponent,
+    ConsultorComponent,
     
   ],
   imports: [

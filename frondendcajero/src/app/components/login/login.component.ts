@@ -49,7 +49,14 @@ export class LoginComponent implements OnInit {
           
           
             localStorage.setItem('token',data.token);
-            this.router.navigate(['home'])
+
+            if(!this.lognService.isAdmin()){
+              this.router.navigate(['consultor'])
+              
+            }else{
+               this.router.navigate(['home'])
+             
+            }
           
        },error=>{
           swal.fire({

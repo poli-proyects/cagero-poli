@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import decode from 'jwt-decode';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +12,12 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class LoginServiceService {
   ulrlogin  ='http://localhost:3000/api/login'
   public token : String |any;
+  tokenDes : String |any
 
   constructor(
     private http : HttpClient,
-    private jwtHelper : JwtHelperService
+    private jwtHelper : JwtHelperService,
+   
   ) { }
 
   login(credenciales : any):Observable<any>{
@@ -27,5 +32,16 @@ export class LoginServiceService {
 
     }
     return true;
+  }
+  isAdmin():boolean{
+    this.token =  localStorage.getItem('token');
+    this.tokenDes = decode(this.token);
+    
+  const {tipoUser} = this.tokenDes;
+    if(!this.isPermis() ||  tipoUser !== 'admin')
+    {
+      return false
+    }
+    return true
   }
 }

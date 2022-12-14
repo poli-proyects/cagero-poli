@@ -7,13 +7,16 @@ import { LoginguardGuard } from './guards/loginguard.guard';
 import { MovimientosComponent } from './components/movimientos/movimientos.component';
 import { RetiroComponent } from './components/retiro/retiro.component';
 import { ConsignarComponent } from './components/consignar/consignar.component';
+import { ConsultorComponent } from './components/consultor/consultor.component';
+import { RolesGuard } from './guards/roles.guard';
 
 const routes: Routes = [
  { path: '', component: LoginComponent },
-  {path :'home',component: HomeComponent,canActivate: [LoginguardGuard]},
+  {path :'home',component: HomeComponent,canActivate:[RolesGuard],data:{expectRole : 'admin'}},
   {path :'movmientos/:documento',component:MovimientosComponent,canActivate: [LoginguardGuard]},
   {path :'consginar/:documento',component:ConsignarComponent,canActivate: [LoginguardGuard]},
-  {path :'retiro/:documento',component:RetiroComponent,canActivate: [LoginguardGuard]}
+  {path :'retiro/:documento',component:RetiroComponent,canActivate: [LoginguardGuard]},
+  {path:'consultor',component:ConsultorComponent,canActivate:[LoginguardGuard]}
 ];
 
 @NgModule({
